@@ -1,0 +1,48 @@
+{
+	"schemaVersion": 1,
+	"id": "tsr-client",
+	"version": "${version}",
+	"name": "tsr-client",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/tsr-client/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			{
+				"value": "asia4046.tsr.Tsrclient",
+				"adapter": "kotlin"
+			}
+		],
+		"client": [
+			{
+				"value": "asia4046.tsr.TsrclientClient",
+				"adapter": "kotlin"
+			}
+		]
+	},
+	"mixins": [
+		"tsr-client.mixins.json",
+		{
+			"config": "tsr-client.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.5",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*",
+		"fabric-language-kotlin": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
